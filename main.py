@@ -48,9 +48,13 @@ while not is_game_over():
     if not guess_is_valid(guess):
         continue
 
-    if guess in full_list:
-        guessed += 1
+    if guess in full_list :
+        if guesses.__contains__(guess)==True:
+          print("Repeated word")
+          continue
         guesses.append(guess)
+
+        guessed += 1
         if guessed == WORDS_TO_WIN:
             congratulate_user()
             exit()
